@@ -20,3 +20,15 @@ app.listen(port, () => {
 });
 
 require("./config/db")(app);
+
+const handlebarOptions = {
+    viewEngine: {
+        extName: '.handlebars',
+        partialsDir: 'server/views/partials',
+        layoutsDir: 'server/views/layouts',
+        defaultLayout:'',
+    },
+    viewPath: 'server/views/templates',
+    extName: '.handlebars',
+};
+transporter.use('compile', hbs(handlebarOptions));
