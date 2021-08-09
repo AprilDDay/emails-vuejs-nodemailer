@@ -12,3 +12,13 @@ let transporter = nodemailer.createTransport({
         rejectUnauthorizedUser: false
     }
 });
+
+exports.welcomeMail = (email, name) => transportersendMail({
+    from: 'Vue Mailer',
+    to: email,
+    subject: "Account created",
+    template: "welcome",
+    context: {
+        user: name
+    }
+});
