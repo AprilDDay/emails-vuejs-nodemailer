@@ -32,3 +32,5 @@ const handlebarOptions = {
     extName: '.handlebars',
 };
 transporter.use('compile', hbs(handlebarOptions));
+
+require('./api/routeHandler')(app)
